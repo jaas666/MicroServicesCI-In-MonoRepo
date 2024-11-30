@@ -14,14 +14,13 @@
 # [START cloudbuild_go_yaml]
 # [START cloudbuild_go_test_yaml]
 steps:
-# deploy container image to GKE
-- name: "gcr.io/cloud-builders/gke-deploy"
-  args:
-  - run
-  - --filename=manifests
-  - --location=asia-south1
-  - --cluster=ob
-
+  # deploy container image to GKE
+  - name: "gcr.io/cloud-builders/gke-deploy"
+    args:
+      - run
+      - --filename=manifests
+      - --location=us-central1
+      - --cluster=dev-cluster
 
 options:
- logging: CLOUD_LOGGING_ONLY
+  logging: CLOUD_LOGGING_ONLY
